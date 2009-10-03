@@ -32,6 +32,10 @@ namespace LinqToDateTime
                        where d.DayOfWeek == DayOfWeek.Saturday
                        select d);
 
+      var thirdFriday = (from d in DateSequence.FromYear(2009).July()
+                         where d.DayOfWeek == DayOfWeek.Friday
+                         select d).Skip(2).First();
+
       var nextSaturdays = (from d in DateSequence.FromDates(DateTime.Today, DateTime.Today.AddMonths(3))
                            where d.DayOfWeek == DayOfWeek.Saturday
                            select d);
