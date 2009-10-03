@@ -20,9 +20,9 @@ namespace LinqToDateTime
             6. Find every day in March 2018
       */
 
-      var lastTueday = (from d in DateSequence.FromYear(2012).June()
-                        where d.DayOfWeek == DayOfWeek.Tuesday
-                        select d).First();
+      var firstTuesday = (from d in DateSequence.FromYear(2012).June()
+                          where d.DayOfWeek == DayOfWeek.Tuesday
+                          select d).First();
 
       var lastFriday = (from d in DateSequence.FromYear(2008).March()
                         where d.DayOfWeek == DayOfWeek.Friday
